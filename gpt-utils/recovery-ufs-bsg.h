@@ -1,3 +1,6 @@
+#ifndef __RECOVERY_UFS_BSG_H__
+#define __RECOVERY_UFS_BSG_H__
+
 /*
  * Copyright (c) 2020 The Linux Foundation. All rights reserved.
  *
@@ -27,8 +30,7 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __RECOVERY_UFS_BSG_H__
-#define __RECOVERY_UFS_BSG_H__
+
 #include <linux/bsg.h>
 #include <scsi/scsi_bsg_ufs.h>
 #include <endian.h>
