@@ -10,14 +10,12 @@ DEVICE_PATH := device/xiaomi/fog
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a73
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
-TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a73
+TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Assertation
 TARGET_OTA_ASSERT_DEVICE := fog,rain,wind
@@ -45,9 +43,6 @@ TARGET_NO_BOOTLOADER := true
 # Build Hack
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
-
-# Display
-TARGET_SCREEN_DENSITY := 320
 
 # Kernel
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
@@ -145,7 +140,8 @@ TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
-TW_DEFAULT_BRIGHTNESS := 1200
+TW_FLASHLIGHT_PATH := "/sys/class/leds/flashlight-back/brightness"
+TW_DEFAULT_BRIGHTNESS := 1023
 TW_MAX_BRIGHTNESS := 2047
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
