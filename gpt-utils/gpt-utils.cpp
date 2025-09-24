@@ -248,9 +248,8 @@ static int gpt_boot_chain_swap(const uint8_t *pentries_start,
         uint8_t ptn_swap[PTN_ENTRY_SIZE];
         //Skip the xbl partition on UFS devices. That is handled
         //seperately.
-        if (gpt_utils_is_ufs_device() && !strncmp(ptn_swap_list[i],
-                                PTN_XBL,
-                                strlen(PTN_XBL)))
+        if (gpt_utils_is_ufs_device() && (!strcmp(ptn_swap_list[i],PTN_XBL)
+            || !strcmp(ptn_swap_list[i],PTN_XBL_CFG)))
             continue;
 
         ptn_entry = gpt_pentry_seek(ptn_swap_list[i], pentries_start,
@@ -977,9 +976,8 @@ int prepare_boot_update(enum boot_update_stage stage)
                         //of being loaded based on well known GUID'S.
                         //We take care of switching the UFS boot LUN
                         //explicitly later on.
-                        if (!strncmp(ptn_swap_list[i],
-                                                PTN_XBL,
-                                                strlen(PTN_XBL)))
+                        if (!strcmp(ptn_swap_list[i],PTN_XBL)
+                            || !strcmp(ptn_swap_list[i],PTN_XBL_CFG))
                                 continue;
                         snprintf(buf, sizeof(buf),
                                         "%s/%sbak",
