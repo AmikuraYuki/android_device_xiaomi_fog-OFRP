@@ -22,5 +22,5 @@ OF_STATUS_INDENT_RIGHT := 48
 OF_CLOCK_POS := 1
 
 # Others
-OF_FL_PATH1 := /sys/class/leds/flashlight-back/brightness
+OF_FL_PATH1 := /sys/class/leds/flashlight-back
 OF_MAINTAINER := AmikuraYuki

@@ -1,3 +1,4 @@
+ro.build.fox_maintainer=AmikuraYuki
 sys.usb.controller=4e00000.dwc3
 sys.usb.rndis.func.name=rndis_bam
 sys.usb.rmnet.func.name=rmnet_bam
