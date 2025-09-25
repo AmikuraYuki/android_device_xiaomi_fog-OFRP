@@ -1,12 +1,13 @@
 #
-# Copyright (C) 2021 The LineageOS Project
+# Copyright (C) 2025 The Android Open Source Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Device path
 DEVICE_PATH := device/xiaomi/fog
 
-# Architecture
+# Architectures
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -17,35 +18,11 @@ TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-# Assertation
-TARGET_OTA_ASSERT_DEVICE := fog,rain,wind
-
-# A/B
-ENABLE_VIRTUAL_AB := true
-AB_OTA_UPDATER := true
-
-AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    odm \
-    product \
-    system \
-    system_ext \
-    vbmeta \
-    vbmeta_system \
-    vendor \
-    vendor_boot
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := bengal
 TARGET_NO_BOOTLOADER := true
 
-# Build Hack
-BUILD_BROKEN_DUP_RULES := true
-BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
-
 # Kernel
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_BOOT_HEADER_VERSION := 3
 BOARD_DTB_OFFSET := 0x01f00000
 BOARD_KERNEL_BASE := 0x00000000
@@ -82,8 +59,8 @@ BOARD_USES_METADATA_PARTITION := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
-BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
-BOARD_DTBOIMG_PARTITION_SIZE := 16777216
+BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
+BOARD_DTBOIMG_PARTITION_SIZE := 25165824
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 112419745792
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296
 
@@ -148,6 +125,7 @@ TW_EXCLUDE_APEX := true
 TW_FRAMERATE := 60
 TW_FORCE_KEYMASTER_VER := true
 TW_INCLUDE_PYTHON := true
+TW_INCLUDE_FASTBOOTD := true
 
 # UEFI
 TARGET_USES_UEFI := true
