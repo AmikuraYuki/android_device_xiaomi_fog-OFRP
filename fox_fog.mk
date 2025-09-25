@@ -16,11 +16,13 @@ OF_DISABLE_MIUI_OTA_BY_DEFAULT := 1
 
 # Screen settings
 OF_SCREEN_H := 2475
-OF_STATUS_H := 120
+OF_STATUS_H := 108
 OF_STATUS_INDENT_LEFT := 48
 OF_STATUS_INDENT_RIGHT := 48
 OF_CLOCK_POS := 1
+OF_ALLOW_DISABLE_NAVBAR := 0
 
 # Others
 OF_FL_PATH1 := /sys/class/leds/led:torch
+OF_FL_PATH2 := /sys/class/leds/flashlight-back
 OF_MAINTAINER := AmikuraYuki
