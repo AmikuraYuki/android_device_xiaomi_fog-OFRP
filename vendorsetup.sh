@@ -4,8 +4,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
 
-git clone --depth=1 https://github.com/alternoegraha/wwy_kernel_xiaomi_fog_rebase kernel/xiaomi/fog
-
 export TW_DEFAULT_LANGUAGE="en"
 export TARGET_DEVICE_ALT="rain, wind"
 export FOX_USE_BASH_SHELL=1

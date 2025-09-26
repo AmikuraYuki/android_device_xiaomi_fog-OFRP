@@ -18,22 +18,6 @@ TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-# A/B
-ENABLE_VIRTUAL_AB := true
-AB_OTA_UPDATER := true
-
-AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    odm \
-    product \
-    system \
-    system_ext \
-    vbmeta \
-    vbmeta_system \
-    vendor \
-    vendor_boot
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := bengal
 TARGET_NO_BOOTLOADER := true
@@ -45,7 +29,7 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_IMAGE_NAME := Image.gz
+BOARD_KERNEL_IMAGE_NAME := kernel
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_TAGS_OFFSET := 0x00000100
@@ -65,10 +49,9 @@ BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x237
 BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=2048
 
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CONFIG := vendor/fog-perf_defconfig
-TARGET_KERNEL_HEADERS := kernel/xiaomi/fog
-TARGET_KERNEL_SOURCE := kernel/xiaomi/fog
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
