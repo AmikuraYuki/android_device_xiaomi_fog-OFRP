@@ -20,6 +20,19 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # A/B
 ENABLE_VIRTUAL_AB := true
+AB_OTA_UPDATER := true
+
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    odm \
+    product \
+    system \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vendor \
+    vendor_boot
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := bengal
