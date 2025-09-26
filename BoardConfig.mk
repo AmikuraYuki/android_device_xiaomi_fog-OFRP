@@ -18,28 +18,11 @@ TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-# A/B
-ENABLE_VIRTUAL_AB := true
-AB_OTA_UPDATER := true
-
-AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    odm \
-    product \
-    system \
-    system_ext \
-    vbmeta \
-    vbmeta_system \
-    vendor \
-    vendor_boot
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := bengal
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_BOOT_HEADER_VERSION := 3
 BOARD_DTB_OFFSET := 0x01f00000
 BOARD_KERNEL_BASE := 0x00000000
