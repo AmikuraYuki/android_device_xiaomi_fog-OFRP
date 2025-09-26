@@ -57,15 +57,16 @@ jobs:
     - name: Clone device tree
       run: |
         cd ${GITHUB_WORKSPACE}/fox_${{ inputs.MANIFEST_BRANCH }}
-        git clone --depth 1 ${{ inputs.DEVICE_TREE_URL }} -b ${{ inputs.DEVICE_TREE_BRANCH }} ./${{ inputs.DEVICE_PATH }}
+        git clone --depth 1 ${{ inputs.DEVICE_TREE_URL }} -b ${{ inputs.DEVICE_TREE_BRANCH }} ${{ inputs.DEVICE_PATH }}
 
     - name: Build recovery
       run: |
         cd ${GITHUB_WORKSPACE}/fox_${{ inputs.MANIFEST_BRANCH }}
+        export ALLOW_MISSING_DEPENDENCIES=true
+        export LC_ALL="C"
         set +e
         source build/envsetup.sh
         set -e
-        export ALLOW_MISSING_DEPENDENCIES=true
         lunch twrp_${{ inputs.DEVICE_NAME }}-eng && make clean && mka adbd ${{ inputs.BUILD_TARGET }}image
 
     - name: Create release
