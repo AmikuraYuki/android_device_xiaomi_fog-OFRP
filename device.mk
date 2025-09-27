@@ -65,10 +65,6 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.sh \
     init.recovery.qcom.rc
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH)
-
 # Update engine
 PRODUCT_PACKAGES += \
     update_engine \
