@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
 
+OF_MAINTAINER := AmikuraYuki
 OF_USE_GREEN_LED := 0
 OF_HIDE_NOTCH := 1
 OF_USE_MAGISKBOOT := 1
@@ -18,4 +19,4 @@ OF_CLOCK_POS := 1
 OF_ALLOW_DISABLE_NAVBAR := 0
 OF_FL_PATH1 := /sys/class/leds/flashlight-back
 OF_FL_PATH2 := /sys/class/leds/led:torch
-OF_MAINTAINER := AmikuraYuki
+OF_QUICK_BACKUP_LIST := /boot;/dtbo;
