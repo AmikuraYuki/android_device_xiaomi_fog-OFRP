@@ -7,9 +7,21 @@
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# A/B
+ENABLE_VIRTUAL_AB := true
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl-qti.recovery
+
+# Dynamic partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# f2fs utilities
+PRODUCT_PACKAGES += \
+    sg_write_buffer \
+    f2fs_io \
+    check_f2fs
 
 # Fastbootd
 PRODUCT_PACKAGES += \
