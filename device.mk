@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Enable virtual A/B OTA
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
 
@@ -16,12 +19,6 @@ PRODUCT_PACKAGES += \
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# f2fs utilities
-PRODUCT_PACKAGES += \
-    sg_write_buffer \
-    f2fs_io \
-    check_f2fs
 
 # Fastbootd
 PRODUCT_PACKAGES += \
