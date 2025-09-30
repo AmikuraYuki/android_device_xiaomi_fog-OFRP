@@ -31,6 +31,7 @@ if [[ "$1" == "$FDEVICE" || "$FOX_BUILD_DEVICE" == "$FDEVICE" ]]; then
     export FOX_DELETE_AROMAFM=1
     export FOX_USE_NANO_EDITOR=1
     export FOX_VIRTUAL_AB_DEVICE=1
+    export OF_QUICK_BACKUP_LIST="/boot;/dtbo;"
 else
     [[ -z "$FOX_BUILD_DEVICE" && -z "$BASH_SOURCE" ]] && echo "I: This script requires bash. Not processing the $FDEVICE $(basename $0)"
 fi

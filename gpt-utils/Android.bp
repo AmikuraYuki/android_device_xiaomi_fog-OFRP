@@ -22,6 +22,7 @@ cc_library {
     cflags: [
         "-Wall",
         "-Werror",
+        "-D_GENERIC_KERNEL_HEADERS",
     ],
     srcs: [
         "gpt-utils.cpp",

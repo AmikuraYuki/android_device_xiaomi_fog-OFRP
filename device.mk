@@ -11,6 +11,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 PRODUCT_SHIPPING_API_LEVEL := 30
 
 # A/B
+ENABLE_VIRTUAL_AB := true
+
 AB_OTA_UPDATER := true
 
 AB_OTA_PARTITIONS += \
