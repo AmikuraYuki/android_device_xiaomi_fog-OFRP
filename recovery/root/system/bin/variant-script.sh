@@ -1,42 +1,61 @@
 #!/system/bin/sh
-# This script is needed to automatically set device props.
 
-load_fog()
-{
-    resetprop "ro.product.model" "220333QAG"
-    resetprop "ro.product.vendor.model" "220333QAG"
-    resetprop "ro.product.name" "fog"
-    resetprop "ro.build.product" "fog"
-    resetprop "ro.product.device" "fog"
-    resetprop "ro.product.system.device" "fog"
-    resetprop "ro.product.vendor.device" "fog"
-    resetprop "ro.vendor.product.device" "fog"
+load_c3qa() {
+    resetprop ro.boot.hwname fog
+    resetprop ro.build.product fog
+    resetprop ro.product.board fog
+    resetprop ro.product.bootimage.device fog
+    resetprop ro.product.bootimage.model "Redmi 10C"
+    resetprop ro.product.device fog
+    resetprop ro.product.model "Redmi 10C"
+    resetprop ro.product.odm.device fog
+    resetprop ro.product.odm.model "Redmi 10C"
+    resetprop ro.product.product.device fog
+    resetprop ro.product.product.model "Redmi 10C"
+    resetprop ro.product.system.device fog
+    resetprop ro.product.system.model "Redmi 10C"
+    resetprop ro.product.system_ext.device fog
+    resetprop ro.product.system_ext.model "Redmi 10C"
+    resetprop ro.product.vendor.device fog
+    resetprop ro.product.vendor.model "Redmi 10C"
+    resetprop ro.vendor.product.device fog
 }
 
-load_rain()
-{
-    resetprop "ro.product.model" "220333QNY"
-    resetprop "ro.product.vendor.model" "220333QNY"
-    resetprop "ro.product.name" "rain"
-    resetprop "ro.build.product" "rain"
-    resetprop "ro.product.device" "rain"
-    resetprop "ro.product.system.device" "rain"
-    resetprop "ro.product.vendor.device" "rain"
-    resetprop "ro.vendor.product.device" "rain"
+load_c3qb() {
+    resetprop ro.product.model "Redmi 10"
 }
 
-variant=$(getprop ro.boot.hwc)
-echo $variant
+load_c3qc() {
+    resetprop ro.product.model "Redmi 10 Power"
+}
 
+load_c3ql() {
+    resetprop ro.product.model "Redmi 10C"
+}
+
+load_c3qn() {
+    resetprop ro.product.model "Redmi 10C"
+}
+
+variant=$(getprop ro.boot.product.hardware.sku)
 case $variant in
-    "GLOBAL")
-        load_fog
+    "c3qa")
+        load_c3qa
         ;;
-    "EUROPE")
-        load_rain
+    "c3qb")
+        load_c3qa
+        ;;
+    "c3qc")
+        load_c3qc
+        ;;
+    "c3ql")
+        load_c3ql
+        ;;
+    "c3qn")
+        load_c3qn
         ;;
     *)
-        load_fog
+        load_c3qa
         ;;
 esac
 
