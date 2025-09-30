@@ -20,8 +20,6 @@ cc_library {
         "libz",
     ],
     cflags: [
-        "-Wall",
-        "-Werror",
         "-D_GENERIC_KERNEL_HEADERS",
     ],
     srcs: [
