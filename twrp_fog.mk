@@ -10,7 +10,7 @@ DEVICE_PATH := device/xiaomi/$(PRODUCT_RELEASE_NAME)
 
 # Inherit generic product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit device-specific configuration
