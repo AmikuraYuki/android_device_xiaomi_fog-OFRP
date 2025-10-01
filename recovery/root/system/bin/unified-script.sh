@@ -28,7 +28,7 @@ load_c3qn() {
 device=$(getprop ro.boot.product.hardware.sku)
 case $device in
     "c3qa")
-        load_c3ql
+        load_c3qa
         ;;
     "c3qb")
         load_c3qb
