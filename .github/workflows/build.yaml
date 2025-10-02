@@ -83,4 +83,4 @@ jobs:
 
     - name: Debug
       run: |
-        ls -l ${GITHUB_WORKSPACE}/fox_${{ inputs.MANIFEST_BRANCH }}/out/target/product/${{ inputs.DEVICE_NAME }}/system_ext
+        ls -l ${GITHUB_WORKSPACE}/fox_${{ inputs.MANIFEST_BRANCH }}/out/target/product/${{ inputs.DEVICE_NAME }}
