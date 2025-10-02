@@ -84,3 +84,4 @@ jobs:
     - name: Debug
       run: |
         ls -l ${GITHUB_WORKSPACE}/fox_${{ inputs.MANIFEST_BRANCH }}/out/target/product/${{ inputs.DEVICE_NAME }}
+        find ${GITHUB_WORKSPACE} -type f -name "libdisplayconfig" -print
