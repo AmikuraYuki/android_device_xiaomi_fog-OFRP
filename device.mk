@@ -50,18 +50,10 @@ PRODUCT_PACKAGES += \
     qcom_decrypt_fbe \
     fastbootd
 
-# Haptics
-TW_SUPPORT_INPUT_AIDL_HAPTICS := true
-
-RECOVERY_BINARY_SOURCE_FILES += \
-    $(TARGET_OUT_VENDOR_EXECUTABLES)/hw/vendor.qti.hardware.vibrator.service
-
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/vendor.qti.hardware.vibrator.impl.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libqtivibratoreffect.so
+    # $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so \
 
 # TWRP build flags
 TW_DEFAULT_LANGUAGE := en
@@ -82,3 +74,4 @@ TW_FRAMERATE := 60
 TW_FORCE_KEYMASTER_VER := true
 TW_INCLUDE_PYTHON := true
 TW_INCLUDE_FASTBOOTD := true
+TW_SUPPORT_INPUT_AIDL_HAPTICS := true
