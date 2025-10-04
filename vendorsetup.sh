@@ -20,7 +20,6 @@ fox_get_target_device() {
 [[ -z "$1" && -z "$FOX_BUILD_DEVICE" ]] && fox_get_target_device
 
 if [[ "$1" == "$FDEVICE" || "$FOX_BUILD_DEVICE" == "$FDEVICE" ]]; then
-    export TW_DEFAULT_LANGUAGE="en"
     export TARGET_DEVICE_ALT="rain, wind"
     export FOX_BUILD_TYPE="Stable"
     export FOX_USE_BASH_SHELL=1

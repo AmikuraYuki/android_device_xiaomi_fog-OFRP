@@ -1,7 +1,15 @@
 #!/system/bin/sh
 
 load_c3qa() {
-    resetprop ro.product.device fog
+    resetprop ro.boot.hwname fog1
+    resetprop ro.build.product fog2
+    resetprop ro.product.bootimage.device fog3
+    resetprop ro.product.device fog4
+    resetprop ro.product.odm.device fog5
+    resetprop ro.product.product.device fog6
+    resetprop ro.product.system.device fog7
+    resetprop ro.product.system_ext.device fog8
+    resetprop ro.product.vendor.device fog9
     resetprop ro.product.model "Redmi 10C"
 }
 
